@@ -1,0 +1,90 @@
+#include <Wire.h>
+#include <Adafruit_GFX.h>
+#include <Adafruit_SSD1306.h>
+
+#define SCREEN_WIDTH 128
+#define SCREEN_HEIGHT 64
+#define OLED_RESET -1
+
+Adafruit_SSD1306 display(SCREEN_WIDTH, SCREEN_HEIGHT, &Wire, OLED_RESET);
+
+#define AD8318_PIN A0
+
+float Vout;
+float s21_dB;
+
+// Calibration values from table
+float slope = 41.60;
+float intercept = -79.25;
+
+// ADC percentage threshold for hexane detection
+float HEXANE_THRESHOLD = 30.0;
+
+void setup()   
+{
+  Serial.begin(9600);
+
+  display.begin(SSD1306_SWITCHCAPVCC, 0x3C);
+  display.clearDisplay();
+  display.setTextColor(SSD1306_WHITE);
+}
+
+void loop()    
+{
+
+  int adc = analogRead(AD8318_PIN);
+
+  // ADC to voltage
+  Vout = (adc * 5.0) / 1023.0;
+
+  // Convert voltage to S21
+  s21_dB = (slope * Vout) + intercept;
+
+  // ADC percent
+  float adcPercent = (adc * 100.0) / 1023.0;
+
+  bool hexaneDetected = false;
+
+  if(adcPercent < HEXANE_THRESHOLD)
+  {
+    hexaneDetected = true;
+  }
+
+  //-------------------- SERIAL --------------------
+  Serial.print("ADC=");
+  Serial.print(adc);
+  Serial.print(" | Vout=");
+  Serial.print(Vout,2);
+  Serial.print(" V | S21=");
+  Serial.print(s21_dB,1);
+  Serial.print(" dB | ADC%=");
+  Serial.print(adcPercent,1);
+
+  if(hexaneDetected)
+     Serial.println(" --> HEXANE DETECTED (UNSAFE)");
+  else
+     Serial.println(" --> HEXANE NOT DETECTED (SAFE)");
+
+  //-------------------- OLED --------------------
+  display.clearDisplay();
+
+  display.setTextSize(1);
+  display.setCursor(0, 5);
+  display.println("EDIBLE OIL MONITORING");
+
+  display.setCursor(0, 25);
+  if(hexaneDetected)
+     display.println("HEXANE DETECTED");
+  else
+     display.println("HEXANE NOT DETECTED");
+
+  display.setCursor(0, 45);
+  if(hexaneDetected)
+     display.println("OIL IS UNSAFE");
+  else
+     display.println("OIL IS SAFE");
+
+  display.display();
+
+  delay(500);
+}
