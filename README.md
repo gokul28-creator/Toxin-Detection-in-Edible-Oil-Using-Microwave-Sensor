@@ -145,8 +145,6 @@ Hexane contaminated oil produces a deeper resonance notch and lower detector vol
 
 # 📉 Simulation Result
 
-
-
 ![Graph](Graph.jpg)
 ---
 
@@ -158,7 +156,7 @@ Hexane contaminated oil produces a deeper resonance notch and lower detector vol
 
 # 📷 Hardware Setup
 
-(Add Hardware Image Here)
+![Hardware](Hardware.png)
 
 ---
 
