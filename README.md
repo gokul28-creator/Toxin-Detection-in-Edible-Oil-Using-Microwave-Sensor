@@ -1,4 +1,3 @@
-# Toxin-Detection-in-Edible-Oil-Using-Microwave-Sensor
 
 # 🛢️ Toxin Detection in Edible Oil Using Microwave Sensor
 
