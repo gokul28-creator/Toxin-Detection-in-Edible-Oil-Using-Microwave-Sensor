@@ -136,29 +136,37 @@ The sensor successfully distinguishes pure edible oils from Hexane contaminated 
 Hexane contaminated oil produces a deeper resonance notch and lower detector voltage compared to pure oils.
 
 ---
-<h2 align="center">Project Prototype</h2>
+<h2 align="center">Project Demonstration</h2>
 
-<p align="center">
-  <img src="1. Prototype.jpeg" width="750">
-</p>
+<table align="center">
+<tr>
+<td align="center">
+<img src="Prototype.jpeg" width="600"><br>
+<b>Figure 1.</b> Developed Prototype
+</td>
+</tr>
 
-<h2 align="center">System Workflow</h2>
+<tr>
+<td align="center">
+<img src="WorkFlow.png" width="600"><br>
+<b>Figure 2.</b> System Workflow
+</td>
+</tr>
 
-<p align="center">
-  <img src="2. WorkFlow.png" width="750">
-</p>
+<tr>
+<td align="center">
+<img src="Graph.jpg" width="600"><br>
+<b>Figure 3.</b> Experimental S21 Response
+</td>
+</tr>
 
-<h2 align="center">Experimental S21 Response Graph</h2>
-
-<p align="center">
-  <img src="3. Graph.jpg" width="750">
-</p>
-
-<h2 align="center">Hardware Prototype</h2>
-
-<p align="center">
-  <img src="4. Hardware.png" width="750">
-</p>
+<tr>
+<td align="center">
+<img src="Hardware.png" width="600"><br>
+<b>Figure 4.</b> Hardware Implementation
+</td>
+</tr>
+</table>
 
 # 📚 Applications
 
