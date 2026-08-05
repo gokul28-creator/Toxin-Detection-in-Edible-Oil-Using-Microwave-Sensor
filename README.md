@@ -216,53 +216,7 @@ Research Interests
 - RF Engineering
 - Food Safety Sensors
 
----
 
-# ⭐ Repository Structure
-
-```
-Toxin-Detection-in-Edible-Oil/
-
-│
-
-├── Images/
-
-│ ├── Prototype.jpg
-
-│ ├── Flowchart.png
-
-│ ├── Graph.png
-
-│ ├── Hardware.jpg
-
-│
-
-├── Arduino_Code/
-
-│ └── Hexane_Detection.ino
-
-│
-
-├── Simulation/
-
-│ ├── HFSS Design
-
-│ ├── PCB Files
-
-│
-
-├── Paper/
-
-│ ├── IEEE_Paper.pdf
-
-│ ├── Presentation_Certificate.pdf
-
-│
-
-├── README.md
-
-└── LICENSE
-```
 
 ---
 
@@ -289,5 +243,3 @@ Special thanks to
 - Research Team
 
 ---
-
-⭐ If you found this project useful, please consider giving this repository a Star.
